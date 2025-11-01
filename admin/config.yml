@@ -13,6 +13,8 @@ site_url: https://deaterfoundation.netlify.app
 logo_url: https://deaterfoundation.netlify.app/assets/images/social-card.svg
 i18n:
   structure: single_file
+  locales: [en]
+  default_locale: en
 collections:
   - name: pages
     label: Pages

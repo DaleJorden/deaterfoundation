@@ -11,37 +11,48 @@
   <body>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script>
-      const { CMS, createClass, h } = window;
-      CMS.registerPreviewStyle("/assets/css/main.css");
+      const CMS = window.CMS ?? window.DecapCMS;
+      const createClass = window.createClass ?? CMS?.createClass;
+      const h = window.h ?? CMS?.h ?? window.React?.createElement;
 
-      const ProgramPreview = createClass({
-        render() {
-          const entry = this.props.entry;
-          return h(
-            "article",
-            { className: "prose" },
-            h("h1", {}, entry.getIn(["data", "title"])) ,
-            h("p", {}, entry.getIn(["data", "summary"]))
-          );
+      if (!CMS) {
+        console.error("Decap CMS failed to load.");
+      } else {
+        CMS.registerPreviewStyle("/assets/css/main.css");
+
+        const createPreview = () => {
+          if (!createClass || !h) {
+            return null;
+          }
+
+          return createClass({
+            render() {
+              const entry = this.props.entry;
+
+              return h(
+                "article",
+                { className: "prose" },
+                h("h1", {}, entry.getIn(["data", "title"])),
+                h("p", {}, entry.getIn(["data", "summary"]))
+              );
+            },
+          });
+        };
+
+        const ProgramPreview = createPreview();
+        const NewsPreview = createPreview();
+
+        if (ProgramPreview) {
+          CMS.registerPreviewTemplate("programs", ProgramPreview);
+          CMS.registerPreviewTemplate("people", ProgramPreview);
         }
-      });
 
-      const NewsPreview = createClass({
-        render() {
-          const entry = this.props.entry;
-          return h(
-            "article",
-            { className: "prose" },
-            h("h1", {}, entry.getIn(["data", "title"])) ,
-            h("p", {}, entry.getIn(["data", "summary"]))
-          );
+        if (NewsPreview) {
+          CMS.registerPreviewTemplate("news", NewsPreview);
         }
-      });
 
-      CMS.registerPreviewTemplate("programs", ProgramPreview);
-      CMS.registerPreviewTemplate("news", NewsPreview);
-      CMS.registerPreviewTemplate("people", ProgramPreview);
-      CMS.init();
+        CMS.init();
+      }
     </script>
   </body>
 </html>
