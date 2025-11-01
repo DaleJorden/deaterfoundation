@@ -1,0 +1,155 @@
+---
+layout: layouts/base.njk
+title: Home
+description: Empowering families through emergency assistance, educational resources, and wraparound support.
+structuredData:
+  '@context': https://schema.org
+  '@type': NGO
+  name: Deater Foundation
+  url: https://deaterfoundation.netlify.app/
+  logo: https://deaterfoundation.netlify.app/assets/images/social-card.svg
+  sameAs:
+    - https://www.facebook.com/deaterfoundation
+    - https://www.instagram.com/deaterfoundation
+    - https://www.linkedin.com/company/deater-foundation
+  address:
+    '@type': PostalAddress
+    streetAddress: 123 Community Way
+    addressLocality: Harrisburg
+    addressRegion: PA
+    postalCode: 17101
+    addressCountry: US
+  contactPoint:
+    '@type': ContactPoint
+    contactType: General inquiries
+    email: info@deaterfoundation.org
+---
+{% from "components/hero.njk" import hero %}
+{% from "components/feature-cards.njk" import feature_cards %}
+
+{{ hero({
+  eyebrow: "The Deater legacy",
+  title: "Standing with families when life takes an unexpected turn",
+  copy: "We provide direct financial assistance, family coaching, and community partnerships so that parents can focus on what matters most: caring for their loved ones.",
+  cta: { href: "/donate/", label: "Donate now" },
+  secondaryCta: { href: "/programs/", label: "Explore our programs" },
+  statCards: [
+    { value: "$250K", label: "Granted to families since 2018" },
+    { value: "92%", label: "Of funds invested directly into assistance" },
+    { value: "48", label: "Partner organizations" },
+    { value: "365", label: "Families served last year" }
+  ]
+}) }}
+
+<section class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+  <div class="grid gap-8 lg:grid-cols-[1.15fr,1fr] lg:items-center">
+    <div class="space-y-6">
+      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-primary-600">Our mission</p>
+      <h2 class="section-heading">Compassionate responses to urgent family needs</h2>
+      <div class="prose prose-compact max-w-none text-slate-600">
+        <p>{{ site.mission }}</p>
+        <ul>
+          {% for value in site.values %}
+            <li>{{ value }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <a class="btn-primary" href="/about/">Learn about our story</a>
+        <a class="btn-secondary" href="/contact/">Partner with us</a>
+      </div>
+    </div>
+    <div class="overflow-hidden rounded-3xl border border-slate-200 bg-white/80 p-6 shadow-card">
+      <h3 class="text-xl font-semibold text-slate-900">Need assistance?</h3>
+      <p class="mt-3 text-sm text-slate-600">We walk alongside families facing sudden loss of income, medical crises, and housing insecurity. Reach out so our team can connect you with the right resources.</p>
+      <dl class="mt-6 space-y-4 text-sm text-slate-700">
+        <div class="flex items-start justify-between gap-4">
+          <dt class="font-semibold">Family Advocates</dt>
+          <dd class="text-right">Coordinated planning and referrals</dd>
+        </div>
+        <div class="flex items-start justify-between gap-4">
+          <dt class="font-semibold">Emergency Fund</dt>
+          <dd class="text-right">Rapid mini-grants within 48 hours</dd>
+        </div>
+        <div class="flex items-start justify-between gap-4">
+          <dt class="font-semibold">Community Network</dt>
+          <dd class="text-right">Direct connections to trusted partners</dd>
+        </div>
+      </dl>
+      <a class="btn-secondary mt-8 w-full justify-center" href="/contact/">Request support</a>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white/70 py-16">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <p class="text-sm font-semibold uppercase tracking-[0.3em] text-primary-600">What we do</p>
+    <h2 class="section-heading mt-4">Programs built with dignity and wraparound care</h2>
+    <p class="mt-4 max-w-3xl text-sm text-slate-600">Our initiatives fill critical gaps that public programs often miss—from emergency grants to mentorship and community wellness.</p>
+    <div class="mt-10">
+      {{ feature_cards(collections.programs | slice(0,3)) }}
+    </div>
+    <div class="mt-10">
+      <a class="btn-secondary" href="/programs/">See all programs</a>
+    </div>
+  </div>
+</section>
+
+<section class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+  <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+    <div>
+      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-primary-600">Impact stories</p>
+      <h2 class="section-heading mt-4">Real families. Real outcomes.</h2>
+      <p class="mt-4 text-sm text-slate-600">Each story reminds us that compassion paired with swift action can change a family’s trajectory.</p>
+      <div class="mt-8 space-y-4">
+        {% for post in collections.news | slice(0,3) %}
+          <article class="rounded-2xl border border-slate-200 bg-white/70 p-6 shadow-card">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-primary-500">{{ post.date | readableDate }}</p>
+            <h3 class="mt-3 text-lg font-semibold text-slate-900"><a class="hover:text-primary-600" href="{{ post.url }}">{{ post.data.title }}</a></h3>
+            <p class="mt-2 text-sm text-slate-600">{{ post.data.summary }}</p>
+          </article>
+        {% endfor %}
+      </div>
+      <a class="btn-secondary mt-8" href="/news/">Read more stories</a>
+    </div>
+    <div class="rounded-3xl bg-gradient-to-br from-accent-500/20 via-accent-500/10 to-primary-500/10 p-8 shadow-card">
+      <h3 class="text-2xl font-semibold text-slate-900">Your gift is a lifeline</h3>
+      <p class="mt-4 text-sm text-slate-700">Recurring donations help us respond within hours when a crisis hits. Join the Sustainers Circle today.</p>
+      <ul class="mt-6 space-y-3 text-sm text-slate-600">
+        <li>✔️ $50 provides a week of groceries</li>
+        <li>✔️ $150 keeps utilities connected</li>
+        <li>✔️ $500 secures emergency housing</li>
+      </ul>
+      <a class="btn-primary mt-8 inline-flex" href="/donate/">Become a monthly donor</a>
+    </div>
+  </div>
+</section>
+
+<section class="bg-slate-900 py-16 text-white">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-accent-200">Join the network</p>
+        <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">Corporate partners &amp; community champions</h2>
+        <p class="mt-4 text-sm text-primary-100">We collaborate with hospitals, schools, faith communities, and local businesses to deliver comprehensive care plans. Let’s build something meaningful together.</p>
+      </div>
+      <div class="space-y-4">
+        <div class="rounded-2xl border border-white/20 bg-white/10 p-6">
+          <h3 class="text-lg font-semibold text-white">Sponsor a resilience grant</h3>
+          <p class="mt-2 text-sm text-primary-100">Underwrite emergency funding that we can deploy within 24 hours of a referral.</p>
+        </div>
+        <div class="rounded-2xl border border-white/20 bg-white/10 p-6">
+          <h3 class="text-lg font-semibold text-white">Host a resource drive</h3>
+          <p class="mt-2 text-sm text-primary-100">Mobilize your team to provide essentials like meals, transportation vouchers, and childcare support.</p>
+        </div>
+        <div class="rounded-2xl border border-white/20 bg-white/10 p-6">
+          <h3 class="text-lg font-semibold text-white">Offer professional expertise</h3>
+          <p class="mt-2 text-sm text-primary-100">Provide pro-bono legal, financial, or counseling services for families rebuilding stability.</p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-12">
+      <a class="btn-secondary bg-white text-primary-700 hover:bg-primary-100" href="/contact/">Start a partnership</a>
+    </div>
+  </div>
+</section>

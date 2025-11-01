@@ -1,0 +1,9 @@
+[
+  { "title": "Home", "url": "/" },
+  { "title": "About", "url": "/about/" },
+  { "title": "Programs", "url": "/programs/" },
+  { "title": "Impact", "url": "/news/" },
+  { "title": "People", "url": "/people/" },
+  { "title": "Donate", "url": "/donate/" },
+  { "title": "Contact", "url": "/contact/" }
+]

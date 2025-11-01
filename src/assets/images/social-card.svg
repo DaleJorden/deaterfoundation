@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Deater Foundation social share image">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <g fill="#fff" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif">
+    <text x="80" y="180" font-size="72" font-weight="600">The Deater Foundation</text>
+    <text x="80" y="270" font-size="40" opacity="0.9">Partnering with families to unlock opportunity.</text>
+    <rect x="80" y="340" width="420" height="6" fill="#22c55e" />
+    <text x="80" y="420" font-size="32" opacity="0.85">Community wellness • Emergency assistance • Family coaching</text>
+    <text x="80" y="520" font-size="28" opacity="0.7">deaterfoundation.org</text>
+  </g>
+  <circle cx="980" cy="260" r="140" fill="#22c55e" opacity="0.2" />
+  <circle cx="1020" cy="330" r="110" fill="#22c55e" opacity="0.35" />
+  <circle cx="1035" cy="390" r="80" fill="#22c55e" opacity="0.45" />
+</svg>

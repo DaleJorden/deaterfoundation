@@ -1,0 +1,45 @@
+<footer class="bg-slate-900 text-slate-200">
+  <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="grid gap-10 md:grid-cols-3">
+      <div>
+        <span class="text-lg font-semibold text-white">{{ site.name }}</span>
+        <p class="mt-3 text-sm text-slate-300">{{ site.description }}</p>
+        <div class="mt-6 space-y-1 text-sm text-slate-400">
+          <p>{{ site.contact.address }}</p>
+          <p><a class="hover:text-white" href="tel:{{ site.contact.phone | replace(' ', '') }}">{{ site.contact.phone }}</a></p>
+          <p><a class="hover:text-white" href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a></p>
+        </div>
+      </div>
+      <div>
+        <h2 class="text-sm font-semibold uppercase tracking-widest text-slate-300">Quick links</h2>
+        <ul class="mt-4 space-y-2 text-sm">
+          {% for item in navigation %}
+            <li><a class="hover:text-white" href="{{ item.url }}">{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div>
+        <h2 class="text-sm font-semibold uppercase tracking-widest text-slate-300">Stay connected</h2>
+        <p class="mt-3 text-sm text-slate-400">Join our community of supporters helping families thrive.</p>
+        <div class="mt-4 flex gap-4">
+          <a class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20" href="{{ site.social.facebook }}" aria-label="Facebook">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.07C22 6.48 17.52 2 11.93 2S1.86 6.48 1.86 12.07c0 5.02 3.66 9.19 8.44 9.93v-7.02H7.9v-2.91h2.4V9.41c0-2.38 1.42-3.69 3.58-3.69 1.04 0 2.13.19 2.13.19v2.34h-1.2c-1.19 0-1.56.74-1.56 1.5v1.8h2.65l-.42 2.91h-2.23v7.02c4.78-.74 8.44-4.91 8.44-9.93Z"/></svg>
+          </a>
+          <a class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20" href="{{ site.social.instagram }}" aria-label="Instagram">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><rect width="14" height="14" x="5" y="5" rx="4"/><path d="M16.5 7.5h.01"/><circle cx="12" cy="12" r="3.5"/></svg>
+          </a>
+          <a class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition hover:bg-white/20" href="{{ site.social.linkedin }}" aria-label="LinkedIn">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 8.98h3.95V21H3zM9.54 8.98H13v1.64h.05c.48-.91 1.67-1.86 3.45-1.86 3.69 0 4.37 2.43 4.37 5.6V21h-3.96v-5.34c0-1.27-.03-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21H9.54z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 text-sm text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+      <p>&copy; <span data-current-year></span> {{ site.name }}. All rights reserved.</p>
+      <div class="flex gap-4">
+        <a class="hover:text-white" href="/privacy/">Privacy</a>
+        <a class="hover:text-white" href="/news/">News</a>
+      </div>
+    </div>
+  </div>
+</footer>

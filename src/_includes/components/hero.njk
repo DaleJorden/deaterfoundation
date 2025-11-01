@@ -1,0 +1,33 @@
+{% macro hero(props) %}
+<section class="relative overflow-hidden bg-gradient-to-br from-primary-900 via-primary-800 to-primary-600 text-white">
+  <div class="absolute inset-y-0 -left-32 hidden w-72 rounded-full bg-white/10 blur-3xl md:block" aria-hidden="true"></div>
+  <div class="absolute inset-y-0 -right-32 hidden w-72 rounded-full bg-accent-500/30 blur-3xl md:block" aria-hidden="true"></div>
+  <div class="relative mx-auto flex max-w-6xl flex-col gap-10 px-4 py-20 sm:px-6 lg:flex-row lg:items-center lg:px-8">
+    <div class="max-w-2xl">
+      {% if props.eyebrow %}
+        <p class="text-sm font-semibold uppercase tracking-[0.3em] text-accent-200">{{ props.eyebrow }}</p>
+      {% endif %}
+      <h1 class="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">{{ props.title }}</h1>
+      <p class="mt-6 text-lg text-primary-50 sm:text-xl">{{ props.copy }}</p>
+      <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+        {% if props.cta %}
+          <a class="btn-primary bg-white text-primary-700 hover:bg-primary-100" href="{{ props.cta.href }}">{{ props.cta.label }}</a>
+        {% endif %}
+        {% if props.secondaryCta %}
+          <a class="btn-secondary bg-transparent text-white ring-white/70 hover:bg-white/10" href="{{ props.secondaryCta.href }}">{{ props.secondaryCta.label }}</a>
+        {% endif %}
+      </div>
+    </div>
+    {% if props.statCards %}
+      <div class="grid w-full max-w-xl grid-cols-1 gap-4 sm:grid-cols-2">
+        {% for stat in props.statCards %}
+          <div class="rounded-2xl bg-white/10 p-6 text-left shadow-card">
+            <p class="text-3xl font-semibold text-white">{{ stat.value }}</p>
+            <p class="mt-2 text-sm text-primary-100">{{ stat.label }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+{% endmacro %}

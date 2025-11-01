@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Deater Foundation CMS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+      const { CMS, createClass, h } = window;
+      CMS.registerPreviewStyle("/assets/css/main.css");
+
+      const ProgramPreview = createClass({
+        render() {
+          const entry = this.props.entry;
+          return h(
+            "article",
+            { className: "prose" },
+            h("h1", {}, entry.getIn(["data", "title"])) ,
+            h("p", {}, entry.getIn(["data", "summary"]))
+          );
+        }
+      });
+
+      const NewsPreview = createClass({
+        render() {
+          const entry = this.props.entry;
+          return h(
+            "article",
+            { className: "prose" },
+            h("h1", {}, entry.getIn(["data", "title"])) ,
+            h("p", {}, entry.getIn(["data", "summary"]))
+          );
+        }
+      });
+
+      CMS.registerPreviewTemplate("programs", ProgramPreview);
+      CMS.registerPreviewTemplate("news", NewsPreview);
+      CMS.registerPreviewTemplate("people", ProgramPreview);
+      CMS.init();
+    </script>
+  </body>
+</html>
