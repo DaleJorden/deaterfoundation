@@ -8,9 +8,8 @@
       </span>
     </a>
     <nav class="hidden items-center gap-6 text-sm font-medium text-slate-700 md:flex" aria-label="Primary">
-      {% set pageUrl = page.url or '' %}
       {% for item in navigation %}
-        {% set isCurrent = pageUrl == item.url or (item.url != '/' and pageUrl.startsWith(item.url)) %}
+        {% set isCurrent = page.url == item.url or (item.url != '/' and page.url.startswith(item.url)) %}
         <a
           class="transition-colors hover:text-primary-600 {{ 'text-primary-600 font-semibold' if isCurrent }}"
           href="{{ item.url }}"
