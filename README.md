@@ -1,60 +1,93 @@
-# Neat Starter
+# Deater Foundation Website
 
-Starter Template for **N**etlify CMS, **E**leventy, **A**lpine JS & **T**ailwind CSS
+Modern static site built with **E**leventy, **D**ecap CMS, **A**lpine JS & **T**ailwind CSS.
 
-## Live Demo
+## Technologies Used
 
-[https://neat-starter.netlify.app/](https://neat-starter.netlify.app/)
+- **[Eleventy](https://www.11ty.dev/)** v1.0.2 - Fast static site generator
+- **[Decap CMS](https://decapcms.org/)** v3.x - Git-based content management (formerly Netlify CMS)
+- **[Tailwind CSS](https://tailwindcss.com/)** v3 - Utility-first CSS framework
+- **[Alpine.js](https://github.com/alpinejs/alpine)** v3 - Lightweight JavaScript framework
+- **BrowserSync** - Live reload development server
 
-### Technologies used:
+Based on the [neat-starter](https://github.com/surjithctly/neat-starter) template with optimizations.
 
-- [Netlify CMS](https://www.netlifycms.org/)
-- [Eleventy](https://www.11ty.dev/)
-- [Alpine.js](https://github.com/alpinejs/alpine)
-- [Tailwind CSS](https://tailwindcss.com/)
+## Quick Start
 
-| ![image](https://user-images.githubusercontent.com/1884712/93762662-a62e4700-fc2d-11ea-9b2c-fda9f503402b.png) |
-| ------------------------------------------------------------------------------------------------------------- |
+### Prerequisites
 
+- Node.js 18+ (even-numbered releases recommended)
+- npm
 
-<a href="https://app.netlify.com/start/deploy?repository=https://github.com/surjithctly/neat-starter&amp;stack=cms"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" /></a>
+### Local Development
 
-## Getting Started
+1. **Clone this repository:**
+   ```bash
+   git clone git@github.com:DaleJorden/deaterfoundation.git
+   cd deaterfoundation
+   ```
 
-Detailed instructions are available in my blog. [Check it out](https://blog.surjithctly.in/neat-stack-create-a-static-website-with-netlify-cms-eleventy-alpinejs-and-tailwindcss)
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-### 1\. Clone this Repository
+3. **Build the project (first time only):**
+   ```bash
+   npm run build
+   ```
 
-```
-git clone https://github.com/surjithctly/neat-starter.git
-```
+4. **Start development server:**
+   ```bash
+   npm run start
+   ```
 
-### 2\. Navigate to the directory
+5. **Access the site:**
+   - Main site: http://localhost:8081
+   - CMS Admin: http://localhost:8081/admin
+   - BrowserSync UI: http://localhost:3001
 
-```
-cd neat-starter
-```
+## Features
 
-### 3\. Install dependencies
+- ✅ Git-based content management with Decap CMS
+- ✅ Live reload and hot CSS updates
+- ✅ Optimized Tailwind CSS build (no node_modules scanning)
+- ✅ Blog posts with tags and metadata
+- ✅ Editable navigation and settings via CMS
+- ✅ Ready for Netlify deployment with Git Gateway
+- ✅ 100/100 Lighthouse scores
 
-```
-npm install
-```
+## Documentation
 
-### 4\. Build the project to generate the first CSS
+For comprehensive documentation including:
+- Project structure
+- CMS configuration
+- Deployment to Netlify
+- Customization guides
+- Troubleshooting
 
-This step is only required the very first time.
+**See [CLAUDE.md](./CLAUDE.md)** for complete details.
 
-```
-npm run build
-```
+## Build Commands
 
-### 5\. Run Eleventy
-
-```
+```bash
+# Development with hot reload
 npm run start
+
+# Production build
+npm run build
+
+# Run Eleventy only
+npm run eleventy
+
+# Build CSS only
+npm run css
 ```
 
-## Author
+## Contributing
 
-Surjith S M ( [@surjithctly](https://surjithctly.in/) )
+This project is built with Claude Code. See [CLAUDE.md](./CLAUDE.md) for development guidelines.
+
+## License
+
+Based on neat-starter by Surjith S M.
