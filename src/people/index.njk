@@ -1,0 +1,38 @@
+---
+layout: layouts/base.njk
+title: Our People
+description: Meet the staff and board members guiding the Deater Foundation’s mission of family resilience.
+---
+<section class="bg-white">
+  <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="max-w-3xl">
+      <p class="text-sm font-semibold uppercase tracking-[0.3em] text-primary-600">Team</p>
+      <h1 class="section-heading mt-4">Leaders rooted in lived experience</h1>
+      <p class="mt-4 text-sm text-slate-600">Our team includes family members, social workers, and community advocates who ensure every decision reflects the realities of the families we serve.</p>
+    </div>
+    <div class="mt-12 grid gap-8 md:grid-cols-3">
+      {% for person in collections.people %}
+        {% set hasImage = person.data.image %}
+        {% set initials = person.data.initials or (person.data.title | initials) %}
+        <article class="rounded-3xl border border-slate-200 bg-white/70 p-6 text-center shadow-card">
+          <div
+            class="mx-auto flex h-28 w-28 items-center justify-center rounded-full bg-primary-100 text-2xl font-semibold text-primary-700 {% if hasImage %}overflow-hidden{% endif %}"
+            {% if not hasImage %}role="img" aria-label="Placeholder headshot for {{ person.data.title }}"{% endif %}
+          >
+            {% if hasImage %}
+              <img class="h-full w-full object-cover" src="{{ person.data.image }}" alt="{{ person.data.title }}" loading="lazy" />
+            {% else %}
+              <span aria-hidden="true">{{ initials }}</span>
+            {% endif %}
+          </div>
+          <h2 class="mt-6 text-xl font-semibold text-slate-900">{{ person.data.title }}</h2>
+          <p class="mt-1 text-sm text-primary-600">{{ person.data.role }}</p>
+          <p class="mt-4 text-sm text-slate-600">{{ person.data.summary }}</p>
+          {% if person.data.linkedin %}
+            <a class="mt-6 inline-flex items-center justify-center text-sm font-semibold text-primary-600" href="{{ person.data.linkedin }}">Connect on LinkedIn →</a>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

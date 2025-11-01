@@ -1,0 +1,29 @@
+{
+  "name": "Deater Foundation",
+  "tagline": "Families supporting families",
+  "url": "https://deaterfoundation.netlify.app",
+  "ogImage": "/assets/images/social-card.svg",
+  "description": "The Deater Foundation provides emergency financial support, educational resources, and compassionate assistance to families navigating unexpected challenges.",
+  "mission": "To honor the Deater family legacy by helping vulnerable families access the resources, financial assistance, and encouragement they need to thrive.",
+  "values": [
+    "Compassion in action",
+    "Stewardship of community resources",
+    "Equity and dignity for every family",
+    "Transparency and accountability"
+  ],
+  "contact": {
+    "email": "info@deaterfoundation.org",
+    "phone": "(555) 123-4567",
+    "address": "123 Community Way, Harrisburg, PA 17101"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/deaterfoundation",
+    "instagram": "https://www.instagram.com/deaterfoundation",
+    "linkedin": "https://www.linkedin.com/company/deater-foundation"
+  },
+  "donate": {
+    "cta": "Support our families",
+    "platform": "https://www.paypal.com/donate/?hosted_button_id=DEATERFOUNDATION",
+    "mailing": "Checks can be mailed to Deater Foundation, PO Box 123, Harrisburg, PA 17101"
+  }
+}

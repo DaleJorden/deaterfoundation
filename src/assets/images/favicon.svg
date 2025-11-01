@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Deater Foundation emblem">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1d4ed8" />
+      <stop offset="100%" stop-color="#22c55e" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#grad)" />
+  <path d="M20 18h12c8 0 14 5.5 14 14s-6 14-14 14H20z" fill="#fff" />
+  <path d="M28 26h4c4 0 6 2.3 6 6s-2 6-6 6h-4z" fill="#1d4ed8" opacity="0.4" />
+</svg>
