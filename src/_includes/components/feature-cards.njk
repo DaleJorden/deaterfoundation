@@ -1,0 +1,25 @@
+{% macro feature_cards(items) %}
+<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+  {% for item in items %}
+    {% set data = item.data or item %}
+    <article class="flex h-full flex-col rounded-3xl border border-slate-200 bg-white/70 p-6 shadow-card transition hover:-translate-y-1 hover:shadow-xl">
+      <div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary-100 text-primary-700">
+        {% if data.icon %}
+          {{ data.icon | safe }}
+        {% else %}
+          <span class="text-lg font-semibold">{{ loop.index }}</span>
+        {% endif %}
+      </div>
+      <h3 class="mt-4 text-xl font-semibold text-slate-900">{{ data.title }}</h3>
+      <p class="mt-3 text-sm text-slate-600">{{ data.summary or data.copy }}</p>
+      {% set link = data.link or { href: item.url, label: "Learn more" } %}
+      {% if link.href %}
+        <a class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary-600" href="{{ link.href }}">
+          {{ link.label }}
+          <span aria-hidden="true">→</span>
+        </a>
+      {% endif %}
+    </article>
+  {% endfor %}
+</div>
+{% endmacro %}

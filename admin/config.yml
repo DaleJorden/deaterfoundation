@@ -1,0 +1,151 @@
+backend:
+  name: github
+  repo: deaterfoundation/deaterfoundation
+  branch: main
+  commit_messages:
+    create: "Create {{collection}} \"{{slug}}\""
+    update: "Update {{collection}} \"{{slug}}\""
+    delete: "Delete {{collection}} \"{{slug}}\""
+publish_mode: editorial_workflow
+media_folder: src/assets/images/uploads
+public_folder: /assets/images/uploads
+site_url: https://deaterfoundation.netlify.app
+logo_url: https://deaterfoundation.netlify.app/assets/images/social-card.svg
+i18n:
+  structure: single_file
+collections:
+  - name: pages
+    label: Pages
+    files:
+      - label: Home
+        name: home
+        file: src/index.njk
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Body, name: body, widget: markdown }
+      - label: About
+        name: about
+        file: src/pages/about.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Body, name: body, widget: markdown }
+      - label: Donate
+        name: donate
+        file: src/pages/donate.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Body, name: body, widget: markdown }
+      - label: Contact
+        name: contact
+        file: src/pages/contact.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Body, name: body, widget: markdown }
+      - label: Privacy
+        name: privacy
+        file: src/pages/privacy.md
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: text, required: false }
+          - { label: Body, name: body, widget: markdown }
+  - name: programs
+    label: Programs
+    folder: src/programs
+    create: true
+    slug: "{{slug}}"
+    preview_path: programs/{{slug}}
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Summary, name: summary, widget: text }
+      - { label: Order, name: order, widget: number, value_type: int, min: 1 }
+      - label: Hero
+        name: hero
+        widget: object
+        collapsed: true
+        fields:
+          - { label: Eyebrow, name: eyebrow, widget: string, required: false }
+          - { label: Title, name: title, widget: string }
+          - { label: Copy, name: copy, widget: text }
+          - label: Primary CTA
+            name: cta
+            widget: object
+            required: false
+            fields:
+              - { label: Button label, name: label, widget: string }
+              - { label: Button URL, name: href, widget: string }
+          - label: Secondary CTA
+            name: secondaryCta
+            widget: object
+            required: false
+            fields:
+              - { label: Button label, name: label, widget: string }
+              - { label: Button URL, name: href, widget: string }
+      - { label: Body, name: body, widget: markdown }
+  - name: news
+    label: News & Stories
+    folder: src/news
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: news/{{slug}}
+    sortable_fields: ["commit_date", "title", "date"]
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Publish Date, name: date, widget: datetime }
+      - { label: Author, name: author, widget: string, required: false }
+      - { label: Summary, name: summary, widget: text }
+      - { label: Body, name: body, widget: markdown }
+  - name: people
+    label: People
+    folder: src/people
+    create: true
+    slug: "{{slug}}"
+    preview_path: people/{{slug}}
+    fields:
+      - { label: Name, name: title, widget: string }
+      - { label: Role, name: role, widget: string }
+      - { label: Display Order, name: order, widget: number, value_type: int, min: 1 }
+      - { label: Summary, name: summary, widget: text }
+      - { label: Headshot, name: image, widget: image, required: false }
+      - { label: Initials fallback, name: initials, widget: string, required: false, hint: "Shown if no headshot is uploaded" }
+      - { label: LinkedIn, name: linkedin, widget: string, required: false }
+      - { label: Body, name: body, widget: markdown, required: false }
+  - name: settings
+    label: Site settings
+    files:
+      - label: Global site copy
+        name: site
+        file: src/_data/site.json
+        fields:
+          - { label: Site name, name: name, widget: string }
+          - { label: Tagline, name: tagline, widget: string, required: false }
+          - { label: Site URL, name: url, widget: string }
+          - { label: Mission, name: mission, widget: text }
+          - label: Values
+            name: values
+            widget: list
+            field: { label: Value, name: value, widget: string }
+          - label: Contact
+            name: contact
+            widget: object
+            fields:
+              - { label: Email, name: email, widget: string }
+              - { label: Phone, name: phone, widget: string }
+              - { label: Address, name: address, widget: text }
+          - label: Social
+            name: social
+            widget: object
+            fields:
+              - { label: Facebook, name: facebook, widget: string, required: false }
+              - { label: Instagram, name: instagram, widget: string, required: false }
+              - { label: LinkedIn, name: linkedin, widget: string, required: false }
+          - label: Donate
+            name: donate
+            widget: object
+            fields:
+              - { label: CTA text, name: cta, widget: string }
+              - { label: Donation link, name: platform, widget: string }
+              - { label: Mailing instructions, name: mailing, widget: text }

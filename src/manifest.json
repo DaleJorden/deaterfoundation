@@ -1,0 +1,15 @@
+{
+  "name": "Deater Foundation",
+  "short_name": "Deater",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#17294f",
+  "theme_color": "#2857b4",
+  "icons": [
+    {
+      "src": "/assets/images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
