@@ -8,6 +8,47 @@ public_folder: "/static/img"
 
 # publish_mode: editorial_workflow
 collections:
+  - label: "Pages"
+    name: "pages"
+    editor:
+      preview: false
+    files:
+      - label: "About Page"
+        name: "about"
+        file: "src/about.html"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "default" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Registry Page"
+        name: "registry"
+        file: "src/registry.html"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "default" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Funding Page"
+        name: "funding"
+        file: "src/funding.html"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "default" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Contact Page"
+        name: "contact"
+        file: "src/contact.html"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "default" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Researchers Page"
+        name: "researchers"
+        file: "src/researchers.html"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "default" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
   - label: "Blog"
     name: "blog"
     folder: "src/posts"
@@ -26,39 +67,51 @@ collections:
         multiple: true
         create: true
         options: ["Tags", "created", "from", "config.yml"]
+
   - label: "Settings"
     name: "settings"
     editor:
       preview: false
     files:
       - label: "Navigation"
-        name: "items"
+        name: "navigation"
         file: "src/_data/navigation.yaml"
         fields:
           - label: Nav Items
             name: items
             widget: list
-            allow_add: false
             collapsed: false
             fields:
               - { label: Title, name: text, widget: string }
               - { label: URL, name: url, widget: string }
-      - label: "Quick Links"
-        name: "links"
-        file: "src/_data/quicklinks.yaml"
-        fields:
-          - label: Nav Items
-            name: links
-            widget: list
-            collapsed: false
-            fields:
-              - { label: Title, name: title, widget: string }
-              - { label: URL, name: url, widget: string }
-              - { label: Description, name: desc, widget: string }
-      - label: "Meta Settings"
+
+      - label: "Site Settings"
         name: "settings"
         file: "src/_data/settings.yaml"
         fields:
-          - { label: Name, name: name, widget: string }
-          - { label: Author, name: author, widget: string }
-          - { label: URL, name: url, widget: string }
+          - { label: "Site Name", name: name, widget: string }
+          - { label: "Tagline", name: tagline, widget: string }
+          - { label: "Author", name: author, widget: string }
+          - { label: "URL", name: url, widget: string }
+          - label: "Contact Information"
+            name: contact
+            widget: object
+            fields:
+              - { label: "Organization", name: organization, widget: string }
+              - { label: "Address Line 1", name: address_line1, widget: string }
+              - { label: "City", name: address_city, widget: string }
+              - { label: "State", name: address_state, widget: string }
+              - { label: "Zip Code", name: address_zip, widget: string }
+              - { label: "Email", name: email, widget: string }
+          - label: "Social Media"
+            name: social
+            widget: object
+            fields:
+              - { label: "Facebook URL", name: facebook, widget: string }
+          - label: "Footer Information"
+            name: footer
+            widget: object
+            fields:
+              - { label: "Copyright Text", name: copyright, widget: string }
+              - { label: "Candid Rating Text", name: candid_rating, widget: text }
+              - { label: "UMass Chan Text", name: umass_text, widget: text }

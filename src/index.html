@@ -1,22 +1,206 @@
 ---
 layout: default
-title: Neat Starter
+title: The Deater Foundation - HSAN1 Research
 path: home
 ---
 
-<div class="container mx-auto lg:h-screen flex flex-col justify-center items-center">
-  <h1>
-    Welcome to
-    <strong class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
-      {{title}}
-    </strong>
-  </h1>
+<!-- Hero Section -->
+<section class="bg-deater-navy text-white py-20">
+  <div class="container mx-auto px-4 max-w-4xl text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">
+      Together we can find the cure to this rare inherited neuropathy.
+    </h1>
+    <p class="text-xl opacity-90">
+      Supporting world-class research on HSAN1
+    </p>
+  </div>
+</section>
 
-  <p>
-    <abbr title="netlify cms, eleventy, alpine js & tailwind css">NEAT</abbr>
-    Starter Template. Get Started by editing.
-    <code class="bg-gray-100 text-blue-800 p-1">/index.njk</code>
-  </p>
+<!-- Deater & Rare Inherited Neuropathy Section -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl font-bold text-deater-blue mb-6">Deater & Rare Inherited Neuropathy</h2>
+        <div class="prose max-w-none">
+          <p class="mb-4">
+            Hereditary Sensory and Autonomic Neuropathy Type 1 (HSAN1) is a rare genetic disorder that affects the nervous system.
+            This progressive condition impacts sensory and autonomic nerves, leading to loss of sensation, particularly in the feet and hands.
+          </p>
+          <p>
+            The Deater Foundation was established to fund critical research aimed at understanding the genetic mechanisms
+            of HSAN1 and developing potential treatments and cures for this debilitating disease.
+          </p>
+        </div>
+        <a href="/about" class="inline-block mt-6 bg-deater-blue hover:bg-deater-teal text-white font-semibold py-3 px-6 rounded transition-colors">
+          Read More
+        </a>
+      </div>
+      <div class="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
+        <span class="text-gray-500">Image: HSAN1 Research</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-  {% include "./_includes/partials/content.html" %}
-</div>
+<!-- The Research Section -->
+<section class="py-16 bg-deater-gray">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="order-2 md:order-1 bg-gray-200 rounded-lg h-64 flex items-center justify-center">
+        <span class="text-gray-500">Image: Laboratory Research</span>
+      </div>
+      <div class="order-1 md:order-2">
+        <h2 class="text-3xl font-bold text-deater-blue mb-6">The Research</h2>
+        <div class="prose max-w-none">
+          <p class="mb-4">
+            For over 30 years, the Deater Foundation has supported cutting-edge research into HSAN1, funding studies
+            that have led to the identification of the gene causing HSAN1 and advancing our understanding of treatment options.
+          </p>
+          <p>
+            Our funding has enabled world-class researchers to make breakthrough discoveries in the mechanisms of this disease,
+            bringing us closer to effective treatments and ultimately a cure.
+          </p>
+        </div>
+        <a href="/funding" class="inline-block mt-6 bg-deater-blue hover:bg-deater-teal text-white font-semibold py-3 px-6 rounded transition-colors">
+          Read More
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Leadership Section -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl font-bold text-deater-blue mb-6">Our Leadership</h2>
+        <div class="prose max-w-none">
+          <p class="mb-4">
+            The Deater Foundation is led by a dedicated board of directors, many of whom have personal connections
+            to HSAN1 through family members affected by the disease.
+          </p>
+          <p>
+            Our leadership brings together expertise in medicine, research, business, and nonprofit management
+            to advance our mission of finding a cure for HSAN1.
+          </p>
+        </div>
+        <a href="/about" class="inline-block mt-6 bg-deater-blue hover:bg-deater-teal text-white font-semibold py-3 px-6 rounded transition-colors">
+          Read More
+        </a>
+      </div>
+      <div class="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
+        <span class="text-gray-500">Image: Leadership Team</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Meet The Board Section -->
+<section class="py-16 bg-deater-gray">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <h2 class="text-3xl font-bold text-deater-blue mb-4 text-center">Meet The Board</h2>
+    <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+      Our board members are passionate advocates for HSAN1 research and dedicated to our mission.
+    </p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <!-- Board member placeholders -->
+      {% for i in range(1, 9) %}
+      <div class="text-center">
+        <div class="w-24 h-24 mx-auto bg-gray-300 rounded-full mb-3 flex items-center justify-center">
+          <span class="text-gray-500 text-xs">Photo</span>
+        </div>
+        <h3 class="font-semibold text-sm">Board Member {{i}}</h3>
+        <p class="text-xs text-gray-600">Title</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Our Support Section -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <h2 class="text-3xl font-bold text-deater-blue mb-12 text-center">Our Support</h2>
+    <div class="bg-gray-200 rounded-lg h-48 mb-8 flex items-center justify-center">
+      <span class="text-gray-500">Image: Community Support</span>
+    </div>
+    <div class="prose max-w-3xl mx-auto">
+      <p class="text-center">
+        The Deater Foundation has received generous support from individuals, families, and organizations
+        committed to advancing HSAN1 research. Together, we are making a difference in the lives of those
+        affected by this rare disease.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- How To Help Section -->
+<section class="py-16 bg-deater-gray">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <h2 class="text-3xl font-bold text-deater-blue mb-6 text-center">How To Help</h2>
+    <div class="grid md:grid-cols-3 gap-8 mb-8">
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h3 class="font-bold text-xl mb-4 text-deater-blue">Donate</h3>
+        <p class="text-gray-700 mb-4">
+          Your financial support directly funds critical research into HSAN1 treatments and cures.
+        </p>
+        <a href="#" class="inline-block bg-deater-orange hover:bg-yellow-600 text-white font-semibold py-2 px-6 rounded transition-colors">
+          Donate Now
+        </a>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h3 class="font-bold text-xl mb-4 text-deater-blue">Register</h3>
+        <p class="text-gray-700 mb-4">
+          Join the HSAN1 Registry to participate in research studies and clinical trials.
+        </p>
+        <a href="/registry" class="inline-block bg-deater-blue hover:bg-deater-teal text-white font-semibold py-2 px-6 rounded transition-colors">
+          Learn More
+        </a>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h3 class="font-bold text-xl mb-4 text-deater-blue">Spread Awareness</h3>
+        <p class="text-gray-700 mb-4">
+          Help raise awareness about HSAN1 and the importance of research funding.
+        </p>
+        <a href="/contact" class="inline-block bg-deater-blue hover:bg-deater-teal text-white font-semibold py-2 px-6 rounded transition-colors">
+          Get Involved
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Library Section -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4 max-w-4xl">
+    <h2 class="text-3xl font-bold text-deater-blue mb-8 text-center">Our Library</h2>
+    <div class="prose max-w-none">
+      <h3 class="text-xl font-semibold mb-4">Resources and Publications</h3>
+      <p class="mb-4">
+        The Deater Foundation maintains a comprehensive library of resources about HSAN1, including research publications,
+        patient information, and educational materials for families and healthcare providers.
+      </p>
+
+      <h4 class="font-semibold mb-2">Key Publications:</h4>
+      <ul class="mb-6">
+        <li>Research findings on HSAN1 genetic mechanisms</li>
+        <li>Clinical trial results and treatment options</li>
+        <li>Patient care guidelines and best practices</li>
+        <li>Educational materials for families affected by HSAN1</li>
+      </ul>
+
+      <p class="mb-4">
+        These resources are available to researchers, healthcare professionals, patients, and families seeking
+        to better understand HSAN1 and the latest advances in research and treatment.
+      </p>
+
+      <div class="text-center">
+        <a href="#" class="inline-block bg-deater-blue hover:bg-deater-teal text-white font-semibold py-3 px-6 rounded transition-colors">
+          View Resources
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

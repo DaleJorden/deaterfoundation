@@ -1,4 +1,24 @@
 ---
-name: My Eleventy Site
-author: Your Name
-url: "https://your-site-name.netlify.app"
+name: The Deater Foundation
+tagline: HSAN1 Research
+author: Deater Foundation, Inc.
+url: "https://deaterfoundation.org"
+
+# Contact Information
+contact:
+  organization: "Deater Foundation, Inc."
+  address_line1: "PO Box 255"
+  address_city: "White Deer"
+  address_state: "PA"
+  address_zip: "17887"
+  email: "deaterfoundation@yahoo.com"
+
+# Social Media
+social:
+  facebook: "https://www.facebook.com/deaterfoundation"
+
+# Footer Information
+footer:
+  copyright: "2025 The Deater Foundation  501(c) (3) Nonprofit"
+  candid_rating: "The Deater Foundation has achieved this rating on Candid (formerly Guidestar), the world's largest source of information on non-profit organizations."
+  umass_text: "UMass Chan Medical School is cataloging cases of HSAN1 to better understand how to develop a cure"
