@@ -20,6 +20,14 @@ collections:
           - { label: "Layout", name: "layout", widget: "hidden", default: "default" }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Home Page"
+        name: "home"
+        file: "src/index.html"
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "default" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Path", name: "path", widget: "hidden", default: "home" }
+          - { label: "Body", name: "body", widget: "markdown" }
       - label: "Registry Page"
         name: "registry"
         file: "src/registry.html"
